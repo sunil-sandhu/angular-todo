@@ -1,0 +1,15 @@
+<div class="ToDo">
+  <img class="Logo" src="../../assets/angular.png" alt="Angular logo"/>
+  <h1 class="ToDo-Header">Angular To Do</h1>
+  <div class="ToDo-Container">
+    <div class="ToDo-Content">
+        <app-to-do-item 
+          *ngFor="let item of list" 
+          [item]="item" 
+          (deleteItem)="deleteItem($event)">
+      </app-to-do-item>
+    </div>
+    <input [(ngModel)]="todo" type="text" #ctrl="ngModel" (keyup.enter)="createNewToDoItem()" required>
+    <button class="ToDo-Add" (click)="createNewToDoItem()">+</button>
+  </div>
+</div>  
